@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f0de572-a133-49f3-8b26-0ac568ba76ff" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/klient/main/templates/registration/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/klient/main/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/klient/main/templates/registration/login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

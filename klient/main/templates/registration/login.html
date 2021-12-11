@@ -1,0 +1,15 @@
+<!-- templates/registration/login.html -->
+{% extends 'main/layout.html' %}
+{% block title %}
+        <title>Вход</title>
+{% endblock %}
+{% block main %}
+  <div class='log__form'>
+    <h2>Введите логин и пароль</h2>
+      <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Войти</button>
+    </form>
+</div>
+{% endblock %}
