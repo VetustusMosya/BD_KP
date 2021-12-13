@@ -2,11 +2,15 @@ from django.db import models
 
 
 class Auto(models.Model):
+    OIL_TYPE_CHOISE = (
+        ('A-95', 'A-95'),
+        ('DT','DT'),
+    )
     id_auto = models.AutoField(primary_key=True)
     number = models.CharField(unique=True, max_length=9)
     brand = models.CharField(max_length=45)
     model = models.CharField(max_length=45)
-    oil_type = models.CharField(max_length=7)
+    oil_type = models.CharField(max_length=7, choices=OIL_TYPE_CHOISE)
     driver = models.ForeignKey('Driver', models.DO_NOTHING)
     mechanic = models.ForeignKey('Mechanic', models.DO_NOTHING)
     # auto_status = models.BooleanField(default=False)
@@ -21,16 +25,21 @@ class Auto(models.Model):
 
 
 class Cargo(models.Model):
+    CARGO_TYPE = (
+        ('TENT', 'TENT'),
+        ('CONTAINER', 'CONTAINER'),
+        ('REFRIGERATOR', 'REFRIGERATOR'),
+    )
     id_cargo = models.AutoField(primary_key=True)
     customer = models.ForeignKey('Customer', models.DO_NOTHING)
     pickup_date = models.DateField()
     pickup_adress = models.CharField(max_length=45)
     weight = models.IntegerField()
-    type = models.CharField(max_length=45)
+    type = models.CharField(max_length=30, choices=CARGO_TYPE)
     cargo_status = models.BooleanField(default=False)
 
-    # def __str__(self):
-    #     return self.customer
+    def __str__(self):
+        return str(self.id_cargo)
 
     class Meta:
         managed = False
@@ -65,8 +74,8 @@ class Delivery(models.Model):
     trailer = models.ForeignKey('Trailer', models.DO_NOTHING)
     delivery_status = models.BooleanField(default=False)
 
-    # def __str__(self):
-    #     return self.id_delivery
+    def __str__(self):
+        return str(self.id_delivery)
 
     class Meta:
         managed = False
@@ -113,8 +122,8 @@ class Storage(models.Model):
     finish_date = models.DateField(blank=True, null=True)
     storage_status = models.BooleanField(default=False)
 
-    # def __str__(self):
-    #     return self.id_storage
+    def __str__(self):
+        return str(self.id_storage)
 
     class Meta:
         managed = False
@@ -160,8 +169,8 @@ class Warehouse(models.Model):
     id_place = models.AutoField(primary_key=True)
     place_status = models.BooleanField(default=False)
 
-    # def __str__(self):
-    #     return self.id_place
+    def __str__(self):
+        return str(self.id_place)
 
     class Meta:
         managed = False

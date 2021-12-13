@@ -1,0 +1,37 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+    <title>Доставка</title>
+{% endblock %}
+{% block navigation %}
+    <h1>Доставка</h1>
+{% endblock %}
+
+
+{% block main %}
+    <table id="tabs-1" class="tabs-text">
+            <tr>
+                <th>Номер доставки</th>
+                <th>Номер заказа</th>
+                <th>Адрес </th>
+                <th>Машина</th>
+                <th>Прицеп </th>
+                <th>Статус доставки </th>
+            </tr>
+        {% for el in delivery %}
+            <tr>
+                <td> {{el.id_delivery}} </td>
+                <td> {{el.cargo}} </td>
+                <td> {{el.delivery_adress}} </td>
+                <td> {{el.car}} </td>
+                <td> {{el.trailer}} </td>
+                <td> {% if el.delivery_status == False %}Выполнен
+                    {% else %}Выполняется
+                    {% endif%}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+    
+{% endblock %}
+

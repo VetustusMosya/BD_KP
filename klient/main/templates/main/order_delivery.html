@@ -1,0 +1,22 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+        <title>Оформление доставки</title>
+{% endblock %}
+{% block navigation %}
+    <h1>Заказ на доставку</h1>
+{% endblock %}
+{% block main %}
+        <form method="post">
+            {% csrf_token %}
+            <ul class="main__form">
+                <li>Код компании {{ form.customer }}</li>
+                <li>Дата вывоза груза {{ form.pickup_date }}</li>
+                <li>Адрес вывоза {{ form.pickup_adress }}</li>
+                <li>Вес груза {{ form.weight }}</li>
+                <li>Тип груза {{ form.type }}</li>
+                <span> {{ error }}</span>
+            </ul>
+            <button type="submit">Оформить заказ </button>
+        </form>
+{% endblock %}
