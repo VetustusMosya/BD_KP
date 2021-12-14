@@ -2,10 +2,16 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import *
 from .forms import *
+from django.shortcuts import redirect
+from django.contrib.auth.models import Group
 
 
 def index(request):
-    return render(request, 'main/index.html')
+    username = request.user.username
+    if username == 'user':
+        return render(request,  'main/customer.html')
+    else:
+        return render(request, 'main/index.html')
 
 
 def delivery(request):
@@ -30,3 +36,4 @@ def orderDelivery(request):
     }
 
     return render(request, 'main/order_delivery.html', data)
+
