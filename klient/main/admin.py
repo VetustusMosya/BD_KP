@@ -69,3 +69,7 @@ class WarehouseAdmin(admin.ModelAdmin):
     ordering = ('id_place',)
 
 # class AutoAdmin(models.ModelAdmin):
+
+
+
+
