@@ -9,10 +9,9 @@ class AutoAdmin(admin.ModelAdmin):
     ordering = ('id_auto',)
 
 
-
 @admin.register(Cargo)
 class CargoAdmin(admin.ModelAdmin):
-    list_display = ('id_cargo', 'customer', 'weight', 'type', 'cargo_status')
+    list_display = ('id_cargo', 'customer', 'pickup_date','pickup_adress','delivery_adress', 'weight', 'type', 'cargo_status')
     list_editable = ('cargo_status',)
     ordering = ('id_cargo',)
 
@@ -25,7 +24,7 @@ class CustomerAdmin(admin.ModelAdmin):
 
 @admin.register(Delivery)
 class DeliveryAdmin(admin.ModelAdmin):
-    list_display = ('id_delivery', 'cargo', 'delivery_adress', 'car', 'delivery_status')
+    list_display = ('id_delivery', 'cargo', 'car', 'delivery_status')
     list_editable = ('delivery_status',)
     ordering = ('id_delivery',)
 
@@ -45,7 +44,7 @@ class MechanicAdmin(admin.ModelAdmin):
 
 @admin.register(Storage)
 class StorageAdmin(admin.ModelAdmin):
-    list_display = ('id_storage', 'cargo', 'warehouse', 'finish_date', 'storage_status')
+    list_display = ('id_storage', 'cargo', 'warehouse', 'storage_status')
     list_editable = ('storage_status',)
     ordering = ('id_storage',)
 

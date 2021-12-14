@@ -7,7 +7,7 @@
     <h1>Заказ на доставку</h1>
 {% endblock %}
 {% block main %}
-        <form method="post">
+        <form method="post" onsubmit="alert('Заказ оформлен')">
             {% csrf_token %}
             <ul class="main__form">
                 <li>Код компании {{ form.customer }}</li>
@@ -15,6 +15,7 @@
                 <li>Адрес вывоза {{ form.pickup_adress }}</li>
                 <li>Вес груза {{ form.weight }}</li>
                 <li>Тип груза {{ form.type }}</li>
+                <li>Адрес доставки {{ form.delivery_adress }}</li>
                 <span> {{ error }}</span>
             </ul>
             <button type="submit">Оформить заказ </button>

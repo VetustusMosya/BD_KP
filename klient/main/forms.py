@@ -6,7 +6,7 @@ from django import forms
 class CargoForm(ModelForm):
     class Meta:
         model = Cargo
-        fields = ['customer', 'pickup_date', 'pickup_adress', 'weight', 'type']
+        fields = ['customer', 'pickup_date', 'pickup_adress', 'delivery_adress', 'weight', 'type']
 
         widgets = {
             'customer': TextInput(attrs={
@@ -19,7 +19,11 @@ class CargoForm(ModelForm):
             }),
             'pickup_adress': TextInput(attrs={
                 'class': 'form__input',
-                'placeholder': 'Адресс'
+                'placeholder': ''
+            }),
+            'delivery_adress': TextInput(attrs={
+                'class': 'form__input',
+                'placeholder': ''
             }),
             'weight': TextInput(attrs={
                 'class': 'form__input',

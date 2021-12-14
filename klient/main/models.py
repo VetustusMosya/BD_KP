@@ -34,12 +34,13 @@ class Cargo(models.Model):
     customer = models.ForeignKey('Customer', models.DO_NOTHING)
     pickup_date = models.DateField()
     pickup_adress = models.CharField(max_length=45)
+    delivery_adress = models.CharField(max_length=45)
     weight = models.IntegerField()
     type = models.CharField(max_length=30, choices=CARGO_TYPE)
     cargo_status = models.BooleanField(default=False)
 
     def __str__(self):
-        return str(self.id_cargo)
+        return str(self.id_cargo) + str(self.customer)
 
     class Meta:
         managed = False
@@ -69,7 +70,6 @@ class Customer(models.Model):
 class Delivery(models.Model):
     id_delivery = models.AutoField(primary_key=True)
     cargo = models.ForeignKey(Cargo, models.DO_NOTHING)
-    delivery_adress = models.CharField(max_length=45)
     car = models.ForeignKey(Auto, models.DO_NOTHING)
     trailer = models.ForeignKey('Trailer', models.DO_NOTHING)
     delivery_status = models.BooleanField(default=False)
@@ -118,8 +118,6 @@ class Storage(models.Model):
     id_storage = models.AutoField(primary_key=True)
     cargo = models.ForeignKey('Cargo', models.DO_NOTHING)
     warehouse = models.ForeignKey('Warehouse', models.DO_NOTHING)
-    start_date = models.DateField()
-    finish_date = models.DateField(blank=True, null=True)
     storage_status = models.BooleanField(default=False)
 
     def __str__(self):
