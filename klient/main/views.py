@@ -8,10 +8,12 @@ from django.contrib.auth.models import Group
 
 def index(request):
     username = request.user.username
-    if username == 'user':
-        return render(request,  'main/customer.html')
+    if username == 'worker':
+        return render(request,  'main/index.html')
+    elif username == 'admin':
+        return redirect( 'admin/')
     else:
-        return render(request, 'main/index.html')
+        return render(request, 'main/customer.html')
 
 
 def delivery(request):
