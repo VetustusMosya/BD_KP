@@ -1,0 +1,18 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+    <title>Пустые места на складе</title>
+{% endblock %}
+{% block navigation %}
+    <h1>Пустые места на складе</h1>
+{% endblock %}
+
+
+{% block main %}
+     <div class="place__box">
+         {% for el in warehouse %}
+            <div class="box"> {{el.id_place }}</div>
+        {% endfor %}
+     </div>
+{% endblock %}
+

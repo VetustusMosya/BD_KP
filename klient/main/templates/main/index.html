@@ -5,9 +5,8 @@
 {% endblock %}
 {% block main %}
         <div class="choise">
-                <a href="http://127.0.0.1:8000/admin/" class="choise__link"><button class="choise__button"> АДМИНИСТРАТОР</button></a>
                 <a href="{% url 'delivery' %}" class="choise__link"><button class="choise__button"> ДОСТАВКА</button></a>
-                <a href="{% url 'delivery' %}" class="choise__link"><button class="choise__button"> ХРАНЕНИЕ</button></a>
-                <a href="{% url 'order_delivery' %}" class="choise__link"><button class="choise__button"> ОФОРМИТЬ ДОСТАВКУ</button></a>
+                <a href="{% url 'storage' %}" class="choise__link"><button class="choise__button"> ХРАНЕНИЕ</button></a>
+                <a href="{% url 'warehouse' %}" class="choise__link"><button class="choise__button"> СКЛАД</button></a>
         </div>
 {% endblock %}

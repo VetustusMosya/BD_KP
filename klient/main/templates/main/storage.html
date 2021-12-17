@@ -1,0 +1,33 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+    <title>Храниение</title>
+{% endblock %}
+{% block navigation %}
+    <h1>Храниение</h1>
+{% endblock %}
+
+
+{% block main %}
+    <table id="tabs-1" class="tabs-text">
+            <tr>
+                <th>Номер</th>
+                <th>Номер заказа</th>
+                <th>На складе </th>
+                <th>Статус</th>
+            </tr>
+        {% for el in storage %}
+            <tr>
+                <td> {{el.id_storage}} </td>
+                <td> {{el.cargo}} </td>
+                <td> {{el.warehouse}} </td>
+                <td> {% if el.storage_status == False %}Отбыл
+                    {% else %}Хранится
+                    {% endif%}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}
+

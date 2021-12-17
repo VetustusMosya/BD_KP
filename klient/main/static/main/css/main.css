@@ -14,6 +14,10 @@ a{
     color: inherit;  
 }
 
+p{
+    color: blanchedalmond;
+}
+
 body{
     min-height: 100vh;
     background-color: #222226;
@@ -254,4 +258,21 @@ form span{
     margin: 30px 147px;
     font-size: 36px;
     color: red; 
+}
+
+/* \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */
+main .place__box{
+    display: flex;
+    justify-content: center;
+    padding: 50px 0 0;
+}
+
+
+main .place__box .box{
+    padding: 20px;
+    margin: 10px;
+    background-color: #444446;
+    font-size: 26px;
+    color: white;
+    font-family: Roboto, sans-serif;
 }
