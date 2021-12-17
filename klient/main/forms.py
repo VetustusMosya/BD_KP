@@ -1,5 +1,5 @@
 from .models import *
-from django.forms import ModelForm, TextInput, DateTimeInput, Select
+from django.forms import ModelForm, TextInput, DateInput, Select, NumberInput
 from django import forms
 
 
@@ -13,7 +13,7 @@ class CargoForm(ModelForm):
                 'class': 'form__input',
                 'placeholder': 'Цифра'
             }),
-            'pickup_date': DateTimeInput(attrs={
+            'pickup_date': DateInput(attrs={
                 'class': 'form__input',
                 'placeholder': 'ГГГГ-ММ-ДД'
             }),
@@ -23,10 +23,9 @@ class CargoForm(ModelForm):
             }),
             'delivery_adress': TextInput(attrs={
                 'class': 'form__input',
-                'placeholder': ''
+                'placeholder': "'---' если доставка "
             }),
-            'weight': TextInput(attrs={
-                'class': 'form__input',
-                'placeholder': 'Тонны'
+            'weight': NumberInput(attrs={
+                'class': 'form__input'
             }),
         }
