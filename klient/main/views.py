@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 from .models import *
 from .forms import *
 from django.shortcuts import redirect
@@ -31,6 +30,12 @@ def storage(request):
 def warehouse(request):
     warehouse = Warehouse.objects.raw('call see_empty_place(0);')
     return render(request, 'main/warehouse.html', {'warehouse': warehouse})
+
+
+def lookorders(request):
+    username = request.user.username
+    lookorders = Cargo.objects.raw("call see_orders('%s');" % username)
+    return render(request, 'main/lookorders.html', {'lookorders': lookorders})
 
 
 def orderDelivery(request):

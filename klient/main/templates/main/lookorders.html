@@ -1,0 +1,28 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+    <title>FireFly C°</title>
+{% endblock %}
+{% block navigation %}
+    <h1>Ваши заказы</h1>
+{% endblock %}
+{% block main %}
+    <table id="tabs-1" class="tabs-text">
+            <tr>
+                <th>Номер заказы</th>
+                <th>Адресс</th>
+                <th>Статус</th>
+            </tr>
+        {% for el in lookorders %}
+            <tr>
+                <td> {{el.id_cargo}} </td>
+                <td> {{el.delivery_adress}} </td>
+                <td> {% if el.cargo_status == False %}Выполнен
+                    {% else %}Выполняется
+                    {% endif%}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}
