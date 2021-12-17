@@ -16,9 +16,7 @@ def index(request):
 
 
 def delivery(request):
-    # delivery = Delivery.objects.all()
-    delivery = Delivery.objects.raw("select * from delivery")
-
+    delivery = Delivery.objects.raw("call delivery_view(1);")
     return render(request, 'main/delivery.html', {'delivery': delivery})
 
 

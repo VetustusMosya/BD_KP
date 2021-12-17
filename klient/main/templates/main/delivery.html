@@ -12,14 +12,16 @@
     <table id="tabs-1" class="tabs-text">
             <tr>
                 <th>Номер доставки</th>
-                <th>Номер заказа</th>
+                <th>Адресс доставки</th>
+                <th>Заказчик</th>
                 <th>Машина</th>
-                <th>Прицеп </th>
-                <th>Статус доставки </th>
+                <th>Прицеп</th>
+                <th>Статус доставки</th>
             </tr>
         {% for el in delivery %}
             <tr>
                 <td> {{el.id_delivery}} </td>
+                <td> {{el.delivery_adress}}</td>
                 <td> {{el.cargo}} </td>
                 <td> {{el.car}} </td>
                 <td> {{el.trailer}} </td>
