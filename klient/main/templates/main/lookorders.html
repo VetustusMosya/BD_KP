@@ -16,7 +16,10 @@
         {% for el in lookorders %}
             <tr>
                 <td> {{el.id_cargo}} </td>
-                <td> {{el.delivery_adress}} </td>
+                <td> {% if el.delivery_adress == '---' %}Храниться у нас)
+                        {% else %} {{el.delivery_adress}}
+                        {% endif %}
+                </td>
                 <td> {% if el.cargo_status == False %}Выполнен
                     {% else %}Выполняется
                     {% endif%}
